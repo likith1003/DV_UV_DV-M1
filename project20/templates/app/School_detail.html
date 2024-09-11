@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<center>
+    <h1>{{schools.sname}}</h1>
+    <h1>{{schools.princy}}</h1>
+    <h1>schools.loc</h1>
+    <hr>
+<style>
+    table, td, tr, th{
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+    <table>
+        <tr>
+            <th>Student Name</th>
+            <th>Student Class</th>
+            <th>Student Address</th>
+        </tr>
+        {% for school in schools.schools.all %}
+    <tr>
+        <td>{{school.stdname}}</td>
+    <td>{{school.stdclass}}</td>
+    <td>{{school.stdadd}}</td>
+    </tr>
+    
+    {% endfor %}
+    </table><br><br>
+<a href="{% url 'update' schools.pk %}"><button>update School</button></a>
+<a href="{% url 'delete' schools.pk %}"><button>Delete</button></a>
+    
+</center>
+</body>
+</html>
